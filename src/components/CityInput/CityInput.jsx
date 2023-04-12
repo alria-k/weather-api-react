@@ -4,17 +4,21 @@ export function CityInput({ setText }) {
   const [inputValue, setInputValue] = React.useState("");
 
   function handleInput(e) {
-    if (e.target.value == "") {
+    setInputValue(e.target.value);
+  }
+
+  function handleSubmit() {
+    if (!/(.|\s)*\S(.|\s)*/.test(inputValue)) {
       return;
     }
-    setInputValue(e.target.value);
+    setText(inputValue);
   }
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        setText(inputValue);
+        handleSubmit();
       }}
     >
       <input
