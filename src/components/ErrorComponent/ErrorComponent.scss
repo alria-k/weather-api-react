@@ -1,0 +1,11 @@
+.error{
+    &-img{
+        margin: 0 auto;
+        user-select: none;
+        pointer-events: none;
+    }
+    &-title{
+        text-align: center;
+
+    }
+}

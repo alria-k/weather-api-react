@@ -1,4 +1,5 @@
 import React from "react";
+import "./CityInput.scss";
 
 export function CityInput({ setText }) {
   const [inputValue, setInputValue] = React.useState("");
@@ -12,6 +13,7 @@ export function CityInput({ setText }) {
       return;
     }
     setText(inputValue);
+    setInputValue("");
   }
 
   return (
@@ -20,14 +22,18 @@ export function CityInput({ setText }) {
         e.preventDefault();
         handleSubmit();
       }}
+      className="cityinput__form"
     >
       <input
         type="text"
         value={inputValue}
         placeholder="Type city"
+        className="cityinput__input"
         onChange={(e) => handleInput(e)}
       />
-      <button type="submit">Serach</button>
+      <button type="submit" className="cityinput__btn">
+        Serach
+      </button>
     </form>
   );
 }
